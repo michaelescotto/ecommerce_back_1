@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "1º Pre entrega del curso Programación Backend I: Desarrollo Avanzado de Backend - Escotto Michael",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "start": "node ./server.js",
     "dev": "nodemon ./server.js"
