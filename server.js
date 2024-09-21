@@ -2,7 +2,7 @@ import express from "express"
 import morgan from "morgan"
 import router from "./src/routers/index.router.js"
 import pathHandler from "./src/middlewares/pathHandler.mid.js"
-
+import errorHandler from "./src/middlewares/errorHandler.mid.js"
 
 const server = express()
 

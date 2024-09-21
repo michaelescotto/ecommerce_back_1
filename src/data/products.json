@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Samsung Galaxy S20",
+    "photo": "no-photo.png",
+    "category": "phones",
+    "price": 999,
+    "stock": 18,
+    "id": "33f9886c9fc45c3bdc178ff6"
+  },
+  {
+    "title": "Laptop Dell XPS 13",
+    "photo": "no-photo.png",
+    "category": "pc",
+    "price": 1200,
+    "stock": 12,
+    "id": "0be9d2f28fbce4ac35e655f5"
+  },
+  {
+    "title": "Apple MacBook Air M1",
+    "photo": "no-photo.png",
+    "category": "pc",
+    "price": 1000,
+    "stock": 15,
+    "id": "17e49ce27f359220899974cd"
+  },
+  {
+    "title": "Apple MacBook Pro",
+    "photo": "no-photo.png",
+    "category": "default",
+    "price": 1,
+    "stock": 1,
+    "id": "0e9a61b73e9253237b0eb225"
+  }
+]
