@@ -21,7 +21,19 @@ const createProduct = (req, res) => {
 
 
 const getAllProducts = (req, res) => {
-    const products = ProductsManager.read()
+    const {category} = req.query
+    let products = ProductsManager.read()
+
+    if(category){
+        products = products.filter(product => 
+            product.category.toLowerCase() === category.toLowerCase()
+        )
+    }
+
+    if (category && products.length === 0) {
+        return res.status(404).json({error: `No products found for category: ${category}`})
+    }
+
     res.status(200).json({products})
 }
 
