@@ -1,0 +1,30 @@
+[
+  {
+    "email": "alexander@gmail.com",
+    "password": "1234",
+    "photo": "default-photo.png",
+    "role": 0,
+    "id": "72df16a4964e0f9e27757084"
+  },
+  {
+    "email": "emanuel@gmail.com",
+    "password": "valverde",
+    "photo": "default-photo.png",
+    "role": 0,
+    "id": "dc56b799f12306b0a261dd58"
+  },
+  {
+    "email": "cristian@gmail.com",
+    "password": "123456",
+    "photo": "default-photo.png",
+    "role": 0,
+    "id": "2667dd336aee9ca50d366063"
+  },
+  {
+    "email": "armando@gmail.com",
+    "password": "cuevas",
+    "photo": "default-photo.png",
+    "role": 0,
+    "id": "17d111509102a799726f8691"
+  }
+]

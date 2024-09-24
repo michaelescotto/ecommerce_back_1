@@ -8,7 +8,7 @@ const server = express();
 
 server.use(morgan("dev"));
 server.use(express.json());
-server.use("/api/products", router);
+server.use("/api", router);
 server.use(pathHandler);
 server.use(errorHandler);
 
