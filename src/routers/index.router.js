@@ -1,13 +1,46 @@
-import {Router} from "express"
-import productController from "../controllers/product.controller.js"
+import { Router } from "express";
+import productController from "../controllers/product.controller.js";
 
-const router = Router()
+const router = Router();
 
+router.post("/", async (req, res) => {
+  try {
+    await productController.createProduct(req, res);
+  } catch (error) {
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 
-router.post("/", productController.createProduct)
-router.get("/", productController.getAllProducts)
-router.get("/:id", productController.getProductById)
-router.put("/:id", productController.updateProduct)
-router.delete("/:id", productController.deleteProduct)
+router.get("/", async (req, res) => {
+  try {
+    await productController.getAllProducts(req, res);
+  } catch (error) {
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 
-export default router
+router.get("/:id", async (req, res) => {
+  try {
+    await productController.getProductById(req, res);
+  } catch (error) {
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+router.put("/:id", async (req, res) => {
+  try {
+    await productController.updateProduct(req, res);
+  } catch (error) {
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+router.delete("/:id", async (req, res) => {
+  try {
+    await productController.deleteProduct(req, res);
+  } catch (error) {
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
+export default router;

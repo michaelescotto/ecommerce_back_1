@@ -1,55 +1,64 @@
-import fs from "fs"
-import generateId from "../utils/generateId.js"
+import fs from "fs/promises";
+import generateId from "../utils/generateId.js";
 
-const path = "./src/data/products.json"
+const path = "./src/data/products.json";
 
 class ProductsManager {
-    constructor() {
-        this.path = path
-        this.products = this.read()
+  constructor() {
+    this.path = path;
+  }
+
+  async read() {
+    try {
+      const data = await fs.readFile(this.path, "utf-8");
+      return JSON.parse(data);
+    } catch (error) {
+      if (error.code === "ENOENT") {
+        return [];
+      }
+      throw error;
     }
+  }
 
-    read() {
-        if (fs.existsSync(this.path)) {
-            const data = fs.readFileSync(this.path, "utf-8")
-            return JSON.parse(data)
-        }
-        return []
+  async readOne(id) {
+    const products = await this.read();
+    return products.find((product) => product.id === id);
+  }
+
+  async create(product) {
+    product.id = generateId();
+    const products = await this.read();
+    products.push(product);
+    await this.save(products);
+  }
+
+  async update(id, data) {
+    const products = await this.read();
+    const index = products.findIndex((product) => product.id === id);
+    if (index === -1) return null;
+
+    products[index] = { ...products[index], ...data };
+    await this.save(products);
+    return products[index];
+  }
+
+  async delete(id) {
+    const products = await this.read();
+    const index = products.findIndex((product) => product.id === id);
+    if (index === -1) return null;
+
+    const [deletedProduct] = products.splice(index, 1);
+    await this.save(products);
+    return deletedProduct;
+  }
+
+  async save(products) {
+    try {
+      await fs.writeFile(this.path, JSON.stringify(products, null, 2), "utf-8");
+    } catch (error) {
+      throw error;
     }
-
-    readOne(id) {
-        return this.products.find( product => product.id === id)
-    }
-
-    create(product) {
-        product.id = generateId()
-        this.products.push(product)
-        this.save()
-    }
-
-    update (id, data) {
-        const index = this.products.findIndex(product => product.id === id)
-        if (index === -1) return null
-
-        this.products[index] = {...this.products[index], ...data}
-        this.save()
-        return this.products[index]
-    }
-
-    delete(id) {
-        const index = this.products.findIndex(product => product.id === id)
-        if (index === -1) return null
-
-        const [deletedProduct] = this.products.splice(index, 1)
-        this.save()
-        return deletedProduct
-    }
-
-    save() {
-        fs.writeFileSync(this.path, JSON.stringify(this.products, null, 2), "utf-8")
-    }
-
-
+  }
 }
 
 export default new ProductsManager();

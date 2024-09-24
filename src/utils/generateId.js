@@ -1,7 +1,7 @@
-import crypto from "crypto"
+import crypto from "crypto";
 
 const generateId = () => {
-    return crypto.randomBytes(12).toString("hex")
-}
+  return crypto.randomBytes(12).toString("hex");
+};
 
-export default generateId
+export default generateId;
