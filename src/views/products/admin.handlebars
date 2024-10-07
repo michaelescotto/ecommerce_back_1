@@ -1,0 +1,154 @@
+<h2 class="mb-3">Crear Producto</h2>
+<form id="createProductForm" class="mb-4">
+  <div class="mb-3">
+    <label for="newTitle" class="form-label">Título del Producto</label>
+    <input type="text" id="newTitle" class="form-control" placeholder="Título del Producto" required>
+  </div>
+  <div class="mb-3">
+    <label for="newCategory" class="form-label">Categoría</label>
+    <input type="text" id="newCategory" class="form-control" placeholder="Categoría">
+  </div>
+  <div class="mb-3">
+    <label for="newPrice" class="form-label">Precio</label>
+    <input type="number" id="newPrice" class="form-control" placeholder="Precio" required>
+  </div>
+  <div class="mb-3">
+    <label for="newStock" class="form-label">Stock</label>
+    <input type="number" id="newStock" class="form-control" placeholder="Stock" required>
+  </div>
+  <button type="submit" class="btn btn-success">Crear Producto</button>
+</form>
+
+<script>
+document.getElementById('createProductForm').addEventListener('submit', async (e) => {
+  e.preventDefault();  
+
+  const newProduct = {
+    title: document.getElementById('newTitle').value,
+    category: document.getElementById('newCategory').value,
+    price: document.getElementById('newPrice').value,
+    stock: document.getElementById('newStock').value,
+
+  };
+
+  try {
+    const response = await fetch('/api/products', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newProduct),
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+      alert('Producto creado correctamente');
+      location.reload(); 
+    } else {
+      alert(`Error: ${result.error}`);
+    }
+  } catch (error) {
+    console.error('Error al crear el producto:', error);
+  }
+});
+</script>
+
+
+
+<h2>Productos existentes</h2>
+<div class="row">
+  {{#each products}}
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">{{this.title}}</h5>
+          <p class="card-text">Precio: ${{this.price}}</p>
+          <p class="card-text">Stock: {{this.stock}}</p>
+          <p class="card-text">Categoria: {{this.category}}</p>
+          <form id="updateForm{{this.id}}" onsubmit="updateProduct(event, '{{this.id}}')">
+            <div class="mb-3">
+              <label for="title{{this.id}}" class="form-label">Nuevo Título</label>
+              <input type="text" class="form-control" name="title" value="{{this.title}}" placeholder="Nuevo Título">
+            </div>
+            <div class="mb-3">
+              <label for="price{{this.id}}" class="form-label">Nuevo Precio</label>
+              <input type="number" class="form-control" name="price" value="{{this.price}}" placeholder="Nuevo Precio">
+            </div>
+            <div class="mb-3">
+              <label for="stock{{this.id}}" class="form-label">Nuevo Stock</label>
+              <input type="number" class="form-control" name="stock" value="{{this.stock}}" placeholder="Nuevo Stock">
+            </div>
+            <div class="mb-3">
+              <label for="stock{{this.id}}" class="form-label">Nueva Categoria</label>
+              <input type="text" class="form-control" name="category" value="{{this.category}}" placeholder="Nueva categoria">
+            </div>
+              <button type="submit" class="btn btn-primary">Actualizar</button>
+          </form>
+          <div class="mt-2">
+            <button type="button" class="btn btn-danger" onclick="deleteProduct('{{this.id}}')">Eliminar</button>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
+
+<script>
+async function updateProduct(event, id) {
+  event.preventDefault();
+
+  const form = document.getElementById('updateForm' + id);
+  const formData = new FormData(form);
+
+  const updatedProduct = {
+    title: formData.get('title'),
+    price: formData.get('price'),
+    stock: formData.get('stock'),
+    category: formData.get('category')
+  };
+
+  try {
+    const response = await fetch(`/api/products/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updatedProduct),
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+      alert('Producto actualizado correctamente');
+      location.reload(); 
+    } else {
+      alert(`Error: ${result.error}`);
+    }
+  } catch (error) {
+    console.error('Error al actualizar el producto:', error);
+  }
+}
+</script>
+
+
+
+
+<script>
+async function deleteProduct(id) {
+  try {
+    const response = await fetch(`/api/products/${id}`, {
+      method: 'DELETE',
+    });
+
+    const result = await response.json();
+    if (response.ok) {
+      alert('Producto eliminado correctamente');
+      document.getElementById('updateForm' + id).parentElement.remove();  // Remueve el producto del DOM
+    } else {
+      alert(`Error: ${result.error}`);
+    }
+  } catch (error) {
+    console.error('Error al eliminar el producto:', error);
+  }
+}
+</script>

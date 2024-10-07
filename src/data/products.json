@@ -1,0 +1,348 @@
+[
+  {
+    "title": "Samsung Galaxy S20",
+    "photo": "no-photo.png",
+    "category": "phones",
+    "price": 999,
+    "stock": 18,
+    "id": "33f9886c9fc45c3bdc178ff6"
+  },
+  {
+    "title": "Laptop Dell XPS 13",
+    "photo": "no-photo.png",
+    "category": "pc",
+    "price": 1200,
+    "stock": 12,
+    "id": "0be9d2f28fbce4ac35e655f5"
+  },
+  {
+    "title": "Apple MacBook Air M1",
+    "photo": "no-photo.png",
+    "category": "pc",
+    "price": 1000,
+    "stock": 15,
+    "id": "17e49ce27f359220899974cd"
+  },
+  {
+    "title": "Apple MacBook Pro",
+    "photo": "no-photo.png",
+    "category": "default",
+    "price": "1899",
+    "stock": 1,
+    "id": "0e9a61b73e9253237b0eb225"
+  },
+  {
+    "title": "Laptop Dell XPS 13",
+    "photo": "no-photo.png",
+    "category": "pc",
+    "price": 1200,
+    "stock": 12,
+    "id": "3b2491987a0900c80ebadd19"
+  },
+  {
+    "title": "Apple MacBook Air M2",
+    "photo": "no-photo.png",
+    "category": "pc",
+    "price": 1500,
+    "stock": 8,
+    "id": "2a1e317004b4be95c42fccde"
+  },
+  {
+    "title": "Microsoft Surface Pro 9",
+    "photo": "no-photo.png",
+    "category": "tablet",
+    "price": 1100,
+    "stock": 15,
+    "id": "8382e72b774261e4eea15ea2"
+  },
+  {
+    "title": "Samsung Galaxy Tab S8",
+    "photo": "no-photo.png",
+    "category": "tablet",
+    "price": 850,
+    "stock": 10,
+    "id": "779eef0481baaa93d5ef9418"
+  },
+  {
+    "title": "Sony PlayStation 5",
+    "photo": "no-photo.png",
+    "category": "console",
+    "price": 499,
+    "stock": 25,
+    "id": "ba76a7f251cb1a6c0a534a7b"
+  },
+  {
+    "title": "Xbox Series X",
+    "photo": "no-photo.png",
+    "category": "console",
+    "price": 499,
+    "stock": 20,
+    "id": "e1758121a752e31cb64272c0"
+  },
+  {
+    "title": "Sony PlayStation 5",
+    "photo": "no-photo.png",
+    "category": "console",
+    "price": 499,
+    "stock": 25,
+    "id": "170918801e30eb0e3ce7901e"
+  },
+  {
+    "title": "Nintendo Switch OLED",
+    "photo": "no-photo.png",
+    "category": "console",
+    "price": 350,
+    "stock": 30,
+    "id": "34e7657ef0e0f48a065346e0"
+  },
+  {
+    "title": "Apple iPhone 14",
+    "photo": "no-photo.png",
+    "category": "phones",
+    "price": "999",
+    "stock": "40",
+    "id": "df12a87f51e5243f929d738d"
+  },
+  {
+    "title": "Nintendo Switch OLED",
+    "photo": "no-photo.png",
+    "category": "console",
+    "price": 350,
+    "stock": 30,
+    "id": "5350cc47dd08058a1891c7f2"
+  },
+  {
+    "title": "Google Pixel 7",
+    "photo": "no-photo.png",
+    "category": "phones",
+    "price": "899",
+    "stock": "28",
+    "id": "053da223f02057b87005216c"
+  },
+  {
+    "title": "Dell Alienware M15",
+    "photo": "no-photo.png",
+    "category": "pc",
+    "price": 2000,
+    "stock": 7
+  },
+  {
+    "title": "HP Spectre x360",
+    "photo": "no-photo.png",
+    "category": "pc",
+    "price": 1350,
+    "stock": 10
+  },
+  {
+    "title": "Lenovo Yoga 9i",
+    "photo": "no-photo.png",
+    "category": "pc",
+    "price": 1200,
+    "stock": 9
+  },
+  {
+    "title": "Asus ROG Strix G15",
+    "photo": "no-photo.png",
+    "category": "pc",
+    "price": 1700,
+    "stock": 6
+  },
+  {
+    "title": "Apple iPad Pro 12.9",
+    "photo": "no-photo.png",
+    "category": "tablet",
+    "price": 999,
+    "stock": 12
+  },
+  {
+    "title": "Samsung Galaxy Z Fold 4",
+    "photo": "no-photo.png",
+    "category": "mobile phone",
+    "price": 1799,
+    "stock": 5
+  },
+  {
+    "title": "Xiaomi Mi 11 Ultra",
+    "photo": "no-photo.png",
+    "category": "mobile phone",
+    "price": 799,
+    "stock": 18
+  },
+  {
+    "title": "Sony WH-1000XM5",
+    "photo": "no-photo.png",
+    "category": "audio",
+    "price": 400,
+    "stock": 25
+  },
+  {
+    "title": "Bose QuietComfort 45",
+    "photo": "no-photo.png",
+    "category": "audio",
+    "price": 350,
+    "stock": 30
+  },
+  {
+    "title": "Apple AirPods Max",
+    "photo": "no-photo.png",
+    "category": "audio",
+    "price": 550,
+    "stock": 20
+  },
+  {
+    "title": "Sony Bravia XR A80J",
+    "photo": "no-photo.png",
+    "category": "tv",
+    "price": 2500,
+    "stock": 4
+  },
+  {
+    "title": "Samsung QN90A Neo QLED",
+    "photo": "no-photo.png",
+    "category": "tv",
+    "price": 2100,
+    "stock": 6
+  },
+  {
+    "title": "LG OLED C1",
+    "photo": "no-photo.png",
+    "category": "tv",
+    "price": 1800,
+    "stock": 8
+  },
+  {
+    "title": "Razer Blade 15",
+    "photo": "no-photo.png",
+    "category": "pc",
+    "price": 2400,
+    "stock": 5
+  },
+  {
+    "title": "Acer Predator Helios 300",
+    "photo": "no-photo.png",
+    "category": "pc",
+    "price": 1500,
+    "stock": 7
+  },
+  {
+    "title": "Microsoft Xbox Series S",
+    "photo": "no-photo.png",
+    "category": "console",
+    "price": 299,
+    "stock": 50
+  },
+  {
+    "title": "Google Nest Hub Max",
+    "photo": "no-photo.png",
+    "category": "smart home",
+    "price": 229,
+    "stock": 15
+  },
+  {
+    "title": "Amazon Echo Show 10",
+    "photo": "no-photo.png",
+    "category": "smart home",
+    "price": 250,
+    "stock": 20
+  },
+  {
+    "title": "Apple HomePod Mini",
+    "photo": "no-photo.png",
+    "category": "smart home",
+    "price": 99,
+    "stock": 40
+  },
+  {
+    "title": "Logitech G502 Hero",
+    "photo": "no-photo.png",
+    "category": "peripheral",
+    "price": 80,
+    "stock": 60
+  },
+  {
+    "title": "Corsair K95 RGB Platinum",
+    "photo": "no-photo.png",
+    "category": "peripheral",
+    "price": 200,
+    "stock": 30
+  },
+  {
+    "title": "Razer DeathAdder V2",
+    "photo": "no-photo.png",
+    "category": "peripheral",
+    "price": 70,
+    "stock": 55
+  },
+  {
+    "title": "Sony Alpha 7 IV",
+    "photo": "no-photo.png",
+    "category": "camera",
+    "price": 2500,
+    "stock": 5
+  },
+  {
+    "title": "Canon EOS R6",
+    "photo": "no-photo.png",
+    "category": "camera",
+    "price": 2400,
+    "stock": 4
+  },
+  {
+    "title": "DJI Mavic Air 2",
+    "photo": "no-photo.png",
+    "category": "drone",
+    "price": 800,
+    "stock": 10
+  },
+  {
+    "title": "GoPro HERO 10",
+    "photo": "no-photo.png",
+    "category": "camera",
+    "price": 500,
+    "stock": 12
+  },
+  {
+    "title": "NVIDIA GeForce RTX 4090",
+    "photo": "no-photo.png",
+    "category": "component",
+    "price": 1600,
+    "stock": 3
+  },
+  {
+    "title": "AMD Ryzen 9 5950X",
+    "photo": "no-photo.png",
+    "category": "component",
+    "price": 800,
+    "stock": 6
+  },
+  {
+    "title": "Intel Core i9-12900K",
+    "photo": "no-photo.png",
+    "category": "component",
+    "price": 600,
+    "stock": 7
+  },
+  {
+    "title": "Corsair Vengeance 32GB DDR5",
+    "photo": "no-photo.png",
+    "category": "component",
+    "price": 200,
+    "stock": 25
+  },
+  {
+    "title": "Television 4k SONY",
+    "photo": "no-photo.png",
+    "category": "TV",
+    "price": "799",
+    "stock": "3",
+    "id": "97c95d8da82c0415922cc3ac"
+  },
+  {
+    "title": "Television 8k VIEWSONIC",
+    "photo": "no-photo.png",
+    "category": "phone",
+    "price": "690",
+    "stock": "8",
+    "id": "a2603ceeab2e2cec6258cf0c"
+  }
+]
