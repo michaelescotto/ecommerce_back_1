@@ -1,0 +1,65 @@
+<h1 class="my-4">Bienvenido a nuestro comercio</h1>
+<img src="images/logo.png" alt="Logo del Comercio" class="img-fluid">
+
+<h2 class="mt-5">Productos disponibles</h2>
+
+<div class="mb-4">
+  <label for="categoryFilter" class="form-label">Filtrar por categoría</label>
+  <select id="categoryFilter" class="form-select">
+    <option value="">Todas las categorías</option>
+    <option value="TV">TV</option>
+    <option value="pc">PC</option>
+    <option value="phones">Smartphone</option>
+    <option value="console">Console</option>
+    <option value="audio">Audio</option>
+    <option value="smart home">Smart Home</option>
+    <option value="peripheral">Perifericos</option>
+    <option value="camera">Camaras</option>
+    <option value="drone">Drones</option>
+    <option value="component">Componentes</option>
+    <option value="tablet">Tablet</option>
+    <option value="default">Otros</option>
+
+  </select>
+</div>
+
+<div id="productList" class="row">
+  {{#each products}}
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">{{this.title}}</h5>
+          <p class="card-text">Precio: ${{this.price}}</p>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
+
+<script>
+
+document.getElementById('categoryFilter').addEventListener('change', async (e) => {
+  const category = e.target.value;
+
+
+  const response = await fetch(`/api/products?category=${category}`);
+  const data = await response.json();
+
+
+  const productList = document.getElementById('productList');
+  productList.innerHTML = ''; 
+  data.products.forEach(product => {
+    const productCard = `
+      <div class="col-md-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">${product.title}</h5>
+            <p class="card-text">Precio: $${product.price}</p>
+          </div>
+        </div>
+      </div>
+    `;
+    productList.insertAdjacentHTML('beforeend', productCard);
+  });
+});
+</script>

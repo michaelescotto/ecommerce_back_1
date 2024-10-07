@@ -1,86 +1,96 @@
 import UsersManager from "../managers/Users.manager.js";
 
-const createUser = async (req, res) => {
+class UserController {
+  async createUser(req, res) {
     try {
-        const { email, password, photo, role } = req.body;
+      const { email, password, photo, role } = req.body;
 
-        if (!email || !password) {
-            return res.status(400).json({ error: "Email and password are required." });
-        }
+      if (!email || !password) {
+        return res
+          .status(400)
+          .json({ error: "Email and password are required." });
+      }
 
-        const user = { email, password, photo, role };
-        const id = UsersManager.create(user);
-        
-        res.status(201).json({ id: user.id, message: "User created successfully." });
+      const user = { email, password, photo, role };
+      const id = await UsersManager.create(user);
+
+      res.status(201).json({ id, message: "User created successfully." });
     } catch (error) {
-        res.status(500).json({ error: "Error creating user." });
+      res.status(500).json({ error: "Error creating user." });
     }
-};
+  }
 
-const getAllUsers = async (req, res) => {
+  async getAllUsers(req, res) {
     try {
-        const { role } = req.query;
-        let users = await UsersManager.read();
+      const { role } = req.query;
+      let users = await UsersManager.read();
 
-        if (role) {
-            users = users.filter(user => user.role === Number(role));
-        }
+      if (role) {
+        users = users.filter((user) => user.role === Number(role));
+      }
 
-        res.status(200).json({ users });
+      res.status(200).json({ users });
     } catch (error) {
-        res.status(500).json({ error: "Error retrieving users." });
+      res.status(500).json({ error: "Error retrieving users." });
     }
-};
+  }
 
-const getUserById = async (req, res) => {
+  async getUserById(req, res) {
     try {
-        const { id } = req.params;
-        const user = await UsersManager.readOne(id);
+      const { id } = req.params;
+      const user = await UsersManager.readOne(id);
 
-        if (!user) {
-            return res.status(404).json({ error: "User not found." });
-        }
+      if (!user) {
+        return res.status(404).json({ error: "User not found." });
+      }
 
-        res.status(200).json({ user });
+      res.status(200).json({ user });
     } catch (error) {
-        res.status(500).json({ error: "Error retrieving user." });
+      res.status(500).json({ error: "Error retrieving user." });
     }
-};
+  }
 
-const updateUser = async (req, res) => {
+  async updateUser(req, res) {
     try {
-        const { id } = req.params;
-        const updatedUser = await UsersManager.update(id, req.body);
+      const { id } = req.params;
+      const updatedUser = await UsersManager.update(id, req.body);
 
-        if (!updatedUser) {
-            return res.status(404).json({ error: "User not found." });
-        }
+      if (!updatedUser) {
+        return res.status(404).json({ error: "User not found." });
+      }
 
-        res.status(200).json({ updatedUser, message: "User updated successfully." });
+      res
+        .status(200)
+        .json({ updatedUser, message: "User updated successfully." });
     } catch (error) {
-        res.status(500).json({ error: "Error updating user." });
+      res.status(500).json({ error: "Error updating user." });
     }
-};
+  }
 
-const deleteUser = async (req, res) => {
+  async deleteUser(req, res) {
     try {
-        const { id } = req.params;
-        const deletedUser = await UsersManager.delete(id);
+      const { id } = req.params;
+      const deletedUser = await UsersManager.delete(id);
 
-        if (!deletedUser) {
-            return res.status(404).json({ error: "User not found." });
-        }
+      if (!deletedUser) {
+        return res.status(404).json({ error: "User not found." });
+      }
 
-        res.status(200).json({ deletedUser, message: "User deleted." });
+      res.status(200).json({ deletedUser, message: "User deleted." });
     } catch (error) {
-        res.status(500).json({ error: "Error deleting user." });
+      res.status(500).json({ error: "Error deleting user." });
     }
-};
+  }
 
-export default {
-    createUser,
-    getAllUsers,
-    getUserById,
-    updateUser,
-    deleteUser
-};
+  async loginUser(req, res) {
+    const { email, password } = req.body;
+    try {
+      const user = await UsersManager.login(email, password);
+      res.status(200).json(user);
+    } catch (error) {
+      res.status(404).json({ error: error.message });
+    }
+  }
+}
+
+export default new UserController();

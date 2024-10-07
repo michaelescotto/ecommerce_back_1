@@ -26,5 +26,54 @@
     "photo": "default-photo.png",
     "role": 0,
     "id": "17d111509102a799726f8691"
+  },
+  {
+    "email": "geremias@gmail.com",
+    "password": "12344412",
+    "photo": "default-photo.png",
+    "role": 0,
+    "id": "a091d6957e39c205f6a635c4"
+  },
+  {
+    "email": "megide4620@usoplay.com",
+    "password": "123123123123",
+    "photo": "default-photo.png",
+    "role": 0,
+    "id": "19d2afbff848216c3d6c9121"
+  },
+  {
+    "email": "asd@gmai.cion",
+    "password": "1234",
+    "photo": "default-photo.png",
+    "role": 0,
+    "id": "f452a4c85830f2703c11e54c"
+  },
+  {
+    "email": "asdasd@asdasd",
+    "password": "1123123",
+    "photo": "default-photo.png",
+    "role": 0,
+    "id": "9509a45f22e10383db74ec22"
+  },
+  {
+    "email": "asdasdasdasd@asdasd",
+    "password": "112312312",
+    "photo": "default-photo.png",
+    "role": 0,
+    "id": "5c7e3e6dba2ebf2b81697589"
+  },
+  {
+    "email": "123123asaad@123",
+    "password": "123455",
+    "photo": "default-photo.png",
+    "role": 0,
+    "id": "7ff692cedb53efc442ce5890"
+  },
+  {
+    "email": "dfgdfgdfgdfgg@asd",
+    "password": "1234",
+    "photo": "default-photo.png",
+    "role": 0,
+    "id": "3162ebdce0cf92fae9c3bcb7"
   }
 ]

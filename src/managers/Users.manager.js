@@ -63,6 +63,37 @@ class UsersManager {
       throw error; 
     }
   }
+
+  async register(userData) {
+
+    const users = await this.read();
+    const userExists = users.find(user => user.email === userData.email);
+    if (userExists) {
+      throw new Error("THE USER ALREADY EXISTS");
+    }
+
+    const newUser = {
+      ...userData,
+      id: generateId(),
+      photo: userData.photo || "default-photo.png",
+      role: userData.role || 0,
+    };
+
+    users.push(newUser);
+    await this.save(users);
+    return newUser; 
+  }
+
+  async login(email, password) {
+    const users = await this.read();
+    const user = users.find(user => user.email === email && user.password === password);
+    if (!user) {
+      throw new Error("USER NOT FOUND");
+    }
+    return user; 
+  }
+
+
 }
 
 export default new UsersManager();

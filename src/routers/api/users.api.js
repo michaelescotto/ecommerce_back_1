@@ -11,6 +11,14 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.post("/login", async (req, res) => {
+  try {
+    await userController.loginUser(req, res);
+  } catch (error) {
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
 router.get("/", async (req, res) => {
   try {
     await userController.getAllUsers(req, res);
