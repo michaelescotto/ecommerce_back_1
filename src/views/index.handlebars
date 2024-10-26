@@ -30,6 +30,8 @@
         <div class="card-body">
           <h5 class="card-title">{{this.title}}</h5>
           <p class="card-text">Precio: ${{this.price}}</p>
+          <a href="/products/{{this.id}}" class="btn btn-primary">Ver Detalles</a>
+          <button onclick="addToCart('{{this.id}}')" class="btn btn-success mt-2">Agregar al carrito</button>
         </div>
       </div>
     </div>
@@ -48,6 +50,7 @@ document.getElementById('categoryFilter').addEventListener('change', async (e) =
 
   const productList = document.getElementById('productList');
   productList.innerHTML = ''; 
+
   data.products.forEach(product => {
     const productCard = `
       <div class="col-md-4">
@@ -55,11 +58,34 @@ document.getElementById('categoryFilter').addEventListener('change', async (e) =
           <div class="card-body">
             <h5 class="card-title">${product.title}</h5>
             <p class="card-text">Precio: $${product.price}</p>
+            <a href="/products/${product.id}" class="btn btn-primary">Ver Detalle</a>
+            <button onclick="addToCart('{{this.id}}')" class="btn btn-success mt-2">Agregar al carrito</button>
           </div>
         </div>
       </div>
     `;
     productList.insertAdjacentHTML('beforeend', productCard);
   });
+
 });
+</script>
+<script>
+  async function addToCart(productId) {
+    try {
+      const response = await fetch(`/api/carts/{{user.id}}/add-product`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ product_id: productId, quantity: 1 })
+      });
+      const result = await response.json();
+      if (response.ok) {
+        alert('Producto agregado al carrito');
+      } else {
+        alert('Error al agregar el producto: ' + result.error);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Ocurrió un error al agregar el producto al carrito.');
+    }
+  }
 </script>

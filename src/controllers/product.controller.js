@@ -1,4 +1,5 @@
-import ProductsManager from "../managers/Product.manager.js";
+//import ProductsManager from "../managers/Product.manager.js";
+import ProductsManager from "../data/mongo/managers/product.mongo.js";
 
 const createProduct = async (req, res) => {
   const { title, photo, category, price, stock } = req.body;
@@ -22,6 +23,8 @@ const createProduct = async (req, res) => {
       .json({ id: product.id, message: "Product created successfully" });
   } catch (error) {
     res.status(500).json({ error: "Error creating product" });
+
+    console.log(error);
   }
 };
 

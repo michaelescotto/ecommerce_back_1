@@ -14,7 +14,7 @@ class UserController {
       const user = { email, password, photo, role };
       const id = await UsersManager.create(user);
 
-      res.status(201).json({ id, message: "User created successfully." });
+      res.redirect("/users/login")
     } catch (error) {
       res.status(500).json({ error: "Error creating user." });
     }
@@ -86,11 +86,22 @@ class UserController {
     const { email, password } = req.body;
     try {
       const user = await UsersManager.login(email, password);
-      res.status(200).json(user);
+
+      if (!user) {
+        return res.render('users/login');
+      }
+    
+      req.session.user = {
+        id: user.id,
+        email: user.email,
+        role: user.role,
+      };
+      return res.redirect('/');
     } catch (error) {
-      res.status(404).json({ error: error.message });
+      return res.render('users/login');
     }
   }
+  
 }
 
 export default new UserController();
