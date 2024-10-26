@@ -75,5 +75,33 @@
     "photo": "default-photo.png",
     "role": 0,
     "id": "3162ebdce0cf92fae9c3bcb7"
+  },
+  {
+    "email": "megide4620@usoplay.com",
+    "password": "1234",
+    "photo": "default-photo.png",
+    "role": 0,
+    "id": "4d6b72482549fffa02b07a89"
+  },
+  {
+    "email": "123123123@gmail.com",
+    "password": "1234",
+    "photo": "default-photo.png",
+    "role": 0,
+    "id": "fe326d7f37877a51bbc05c45"
+  },
+  {
+    "email": "123123as@gmail.com",
+    "password": "1234",
+    "photo": "default-photo.png",
+    "role": 0,
+    "id": "5558ccdf15ca4f9d938eeea5"
+  },
+  {
+    "email": "alexander1234@gmail.com",
+    "password": "1234",
+    "photo": "default-photo.png",
+    "role": 0,
+    "id": "2fdb85087cb092b685f24d20"
   }
 ]

@@ -1,0 +1,28 @@
+<h1>Mi Carrito</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Producto</th>
+      <th>Cantidad</th>
+      <th>Estado</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each carts}}
+    <tr>
+      <td>{{this.product_id}}</td>
+      <td>
+        <input type="number" value="{{this.quantity}}" min="1" />
+      </td>
+      <td>{{this.state}}</td>
+      <td>
+        <button class="btn btn-danger" onclick="deleteCart('{{this.id}}')">Eliminar</button>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+<button class="btn btn-success" onclick="finalizePurchase()">Finalizar Compra</button>
+<button class="btn btn-warning" onclick="cancelPurchase()">Cancelar Compra</button>
+<script src="../../../public/js/cart.js"></script>

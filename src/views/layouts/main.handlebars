@@ -18,15 +18,27 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/">Inicio</a>
             </li>
+            {{#if user}}
             <li class="nav-item">
               <a class="nav-link" href="/products/admin">Administración de Productos</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/profile/{{user.id}}">Mi Perfil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/carts/{{user.id}}">Carrito</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/users/logout">Cerrar Sesión</a>
+            </li>
+            {{else}}
             <li class="nav-item">
               <a class="nav-link" href="/users/login">Iniciar Sesión</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/users/register">Registro</a>
             </li>
+            {{/if}}
           </ul>
         </div>
       </div>
@@ -39,7 +51,6 @@
     <footer class="text-center mt-4">
       <p>&copy; 2024 PC STORE. Todos los derechos reservados.</p>
     </footer>
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>

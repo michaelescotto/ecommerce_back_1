@@ -19,8 +19,8 @@
     "title": "Apple MacBook Air M1",
     "photo": "no-photo.png",
     "category": "pc",
-    "price": 1000,
-    "stock": 15,
+    "price": "1000",
+    "stock": "18",
     "id": "17e49ce27f359220899974cd"
   },
   {
@@ -340,9 +340,9 @@
   {
     "title": "Television 8k VIEWSONIC",
     "photo": "no-photo.png",
-    "category": "phone",
-    "price": "690",
-    "stock": "8",
+    "category": "TV",
+    "price": "890",
+    "stock": "5",
     "id": "a2603ceeab2e2cec6258cf0c"
   }
 ]

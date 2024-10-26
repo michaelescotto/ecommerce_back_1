@@ -1,0 +1,17 @@
+<h1>Detalles del Producto</h1>
+
+<div class="card">
+  <img src="/images/{{product.photo}}" alt="{{product.title}}" class="card-img-top">
+  <div class="card-body">
+    <h2 class="card-title">{{product.title}}</h2>
+    <p class="card-text">Categoría: {{product.category}}</p>
+    <p class="card-text">Precio: ${{product.price}}</p>
+    <p class="card-text">Stock disponible: {{product.stock}}</p>
+  </div>
+</div>
+
+<div>
+  <a href="/" class="btn btn-primary mt-3">Volver a Productos</a>
+  <button onclick="addToCart('{{this.id}}')" class="btn btn-success mt-2">Agregar al carrito</button>
+</div>
+
